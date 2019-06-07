@@ -3,23 +3,23 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { switchMap, catchError, tap, take } from 'rxjs/operators';
 
-export const URL ='http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=25';
+export const URL = 'http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=25';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParkingServiceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAll(){
+  getAll() {
     return this.http.get(URL).pipe(
       take(1),
-      tap(()=>{}),
+      tap(() => { }),
       catchError((res) => {
         throw new Error(res);
       })
-    )
+    );
   }
 
 }

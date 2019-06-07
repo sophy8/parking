@@ -1,5 +1,7 @@
-<p>sdfghj</p>
-<mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>
+
+<div class="container-item">
+        <ng-container *ngFor="let i of items">
+                <app-parking-items [properties]="i.properties" [geometry]="i.geometry"></app-parking-items>
+            </ng-container>
+</div>
+

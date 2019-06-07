@@ -1,3 +1,17 @@
-<p>
-  parking-items works!
-</p>
+<mat-card (click)="showMap(geometry, properties)">
+  {{properties.title}}
+  <div *ngIf="show">
+    <div class="free-space">
+      <ul>
+        <li> {{longTerm}}</li>
+      </ul>
+    </div>
+      <div leaflet
+      style="height:300px;"
+      [leafletCenter]="mapCenter"
+      [leafletZoom]="zoomLevel"
+      [leafletOptions]="options"
+      [leafletLayers]="leafletLayers">
+      </div>
+  </div>
+</mat-card>

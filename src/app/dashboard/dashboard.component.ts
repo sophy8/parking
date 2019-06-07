@@ -7,14 +7,18 @@ import { ParkingServiceService } from './../services/parking-service.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  title = 'my-app';
-  constructor(private service:ParkingServiceService){}
-  ngOnInit(){
+
+  items = [];
+  constructor(private service: ParkingServiceService) {
+
+  }
+  ngOnInit() {
     this.getAll();
   }
-  getAll(){
-    this.service.getAll().subscribe((res)=>{
-      console.log(res)
-    })
+  getAll() {
+    this.service.getAll().subscribe((res) => {
+      console.log(res);
+      this.items = res.features;
+    });
   }
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardModule} from './dashboard/dashboard.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     DashboardModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+  LeafletModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
