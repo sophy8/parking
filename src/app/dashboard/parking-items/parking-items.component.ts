@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { latLng, tileLayer, marker, icon, popup } from 'leaflet';
+import { latLng, tileLayer, marker, icon } from 'leaflet';
 
 @Component({
   selector: 'app-parking-items',
@@ -17,6 +17,7 @@ export class ParkingItemsComponent implements OnInit {
   marker;
   options;
   longTerm;
+  shortTerm;
   coordinates = [];
   constructor() {
   }
@@ -26,6 +27,8 @@ export class ParkingItemsComponent implements OnInit {
   showMap(geometry, properties) {
     this.coordinates = geometry.coordinates;
     this.longTerm = properties.layers['parking.garage'].data.FreeSpaceLong;
+    this.shortTerm = properties.layers['parking.garage'].data.FreeSpaceShort;
+
     this.identificateMap();
     // this.show = this.show ? false : true;
     this.show = true;
