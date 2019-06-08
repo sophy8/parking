@@ -28,10 +28,8 @@ export class ParkingItemsComponent implements OnInit {
     this.coordinates = geometry.coordinates;
     this.longTerm = properties.layers['parking.garage'].data.FreeSpaceLong;
     this.shortTerm = properties.layers['parking.garage'].data.FreeSpaceShort;
-
     this.identificateMap();
-    // this.show = this.show ? false : true;
-    this.show = true;
+    this.show = this.show ? false : true;
   }
   identificateMap() {
     this.mapCenter = latLng(this.coordinates[1], this.coordinates[0]);

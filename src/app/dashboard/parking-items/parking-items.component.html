@@ -1,10 +1,28 @@
-<mat-card (click)="showMap(geometry, properties)">
-  {{properties.title}}
+<mat-card >
+  <div class="visible-part">
+    <div class="left-side">
+    <div class="image"><img src="../../../assets/car.png" alt=""></div>
+    <div class="title">  {{properties.title}}</div></div>
+    <div class="right-side">
+      <div class="points">
+        <div class="status"  *ngIf="properties.layers['parking.garage'].data.Name;else nodata">
+          <span>Status?</span>
+          <div [class.free]="properties.layers['parking.garage'].data.FreeSpaceLong>0||properties.layers['parking.garage'].data.FreeSpaceShort>0?true:false" class="circle"></div>
+        </div>
+        <ng-template #nodata >
+          <span>No data provided!</span></ng-template>
+      </div>
+      <button mat-button (click)="showMap(geometry, properties)">
+        <mat-icon [class.open]="show" aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+      </button>
+    </div>
+      </div>
   <div *ngIf="show">
+
     <div class="free-space">
       <ul>
-        <li>Long Term Parking{{longTerm}}</li>
-        <li>Short Term Parking {{shortTerm}}</li>
+        <li>Long Term Parking <span> {{longTerm}}</span></li>
+        <li>Short Term Parking  <span>{{shortTerm}}</span></li>
 
       </ul>
     </div>

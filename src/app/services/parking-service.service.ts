@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { switchMap, catchError, tap, take } from 'rxjs/operators';
+import { switchMap, catchError, tap, take, filter } from 'rxjs/operators';
 
-export const URL = 'http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=25';
+export const URL = 'http://api.citysdk.waag.org/layers/parking.garage/objects?in=admr.nl.amsterdam';
 
 @Injectable({
   providedIn: 'root'

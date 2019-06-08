@@ -9,6 +9,8 @@ import { ParkingServiceService } from './../services/parking-service.service';
 export class DashboardComponent implements OnInit {
 
   items = [];
+  searchText;
+
   constructor(private service: ParkingServiceService) {
 
   }
@@ -18,7 +20,7 @@ export class DashboardComponent implements OnInit {
   getAll() {
     this.service.getAll().subscribe((res) => {
       console.log(res);
-      this.items = res.features;
+      this.items = res['features'];
     });
   }
 }

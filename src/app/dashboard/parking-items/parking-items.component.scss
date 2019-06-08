@@ -1,7 +1,86 @@
 .mat-card{
-  width: 500px;
+  width: 100%;
   margin: 20px 0;
   border: 1px solid rgba(0,0,0,0.14);
   box-shadow: none;
   cursor: pointer;
+  box-sizing: border-box;
+}
+.visible-part{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width:567px){
+    display: block;
+  }
+  .left-side{
+    display: flex;
+    align-items: center;
+  }
+  .right-side{
+    display: flex;
+    align-items: center;
+    @media screen and (max-width:567px){
+      align-items: normal;
+      flex-direction: column;
+    }
+  }
+  .points{
+    span{
+      margin-right: 5px;
+      font-size: 16px;
+      letter-spacing: 3px;
+
+    }
+  }
+  .status{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+  .circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: red;
+    &.free{
+      background: green;
+    }
+  }
+  .title{
+    line-height: 30px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  button{
+    background: rgb(161, 233, 166);
+    mat-icon{
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+      &.open{
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+  .image{
+    width: 50px;
+    height: 50px;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+.free-space{
+  margin-right: 5px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  span{
+    color: #a1e9a6;
+    font-size: 18px;
+    font-weight: 700;  
+  }
 }

@@ -1,7 +1,15 @@
 
+<div class="main-title">Choose your parking garage!</div>
+<div class="search-item">
+                <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Search by name" [(ngModel)]="searchText">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+                              </mat-form-field>
+</div>
 <div class="container-item">
-        <ng-container *ngFor="let i of items">
+        <ng-container *ngFor="let i of items | search : searchText">
                 <app-parking-items [properties]="i.properties" [geometry]="i.geometry"></app-parking-items>
             </ng-container>
 </div>
+
 

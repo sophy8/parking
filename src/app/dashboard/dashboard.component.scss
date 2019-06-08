@@ -1,0 +1,33 @@
+.main-title{
+    font-size: 40px;
+    padding: 25px;
+    font-weight: bold;
+    color: rgb(122, 191, 127);
+}
+.container-item{
+    padding: 20px;
+}
+.search-item{
+    margin: 0 20px;
+    mat-icon{
+        position: absolute;
+        right: 0;
+    }
+    mat-form-field{
+        width: 45%;
+        @media screen and (max-width:567px){
+            width:100%;
+        }
+    }
+}
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: green ;
+   }
+  
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green ;
+  }
