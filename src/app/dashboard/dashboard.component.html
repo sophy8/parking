@@ -7,9 +7,10 @@
                               </mat-form-field>
 </div>
 <div class="container-item">
+        <!-- USE SEARCH PIPE TO SEARCH GARAGE BY NAME -->
         <ng-container *ngFor="let i of items | search : searchText">
                 <app-parking-items [properties]="i.properties" [geometry]="i.geometry"></app-parking-items>
-            </ng-container>
+         </ng-container>
 </div>
 
 

@@ -16,7 +16,9 @@ export class ParkingItemsComponent implements OnInit {
   zoomLevel;
   marker;
   options;
+  //variable for long term
   longTerm;
+    //variable for short term
   shortTerm;
   coordinates = [];
   constructor() {
@@ -24,6 +26,7 @@ export class ParkingItemsComponent implements OnInit {
 
   ngOnInit() {
   }
+    //get varible which i need in html component
   showMap(geometry, properties) {
     this.coordinates = geometry.coordinates;
     this.longTerm = properties.layers['parking.garage'].data.FreeSpaceLong;
@@ -31,6 +34,7 @@ export class ParkingItemsComponent implements OnInit {
     this.identificateMap();
     this.show = this.show ? false : true;
   }
+      //map initialization
   identificateMap() {
     this.mapCenter = latLng(this.coordinates[1], this.coordinates[0]);
     this.zoomLevel = 18;
@@ -38,7 +42,7 @@ export class ParkingItemsComponent implements OnInit {
       icon: icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],
-        iconUrl: '../../../assets/marker-icon.png'
+        iconUrl: 'https://sophy8.github.io/parking/assets/marker-icon.png'
       })
     });
     this.leafletLayers = [tileLayer(
